@@ -5,12 +5,12 @@
 
 ## Description
 
-Wordpress boilerplate.
+Iceberg Wordpress Boilerplate. 
+A starter kit to new Wordpress projects.
 
-Using Gulp to automate build, minify files, optimize images and browser live reloading.
+## Features
 
-Using Bootstrap to grid and compponents.
-
-Using jQuery, AnimateCSS and Wow.JS to animations and DOM manipulation.
-
-Using Sketch to design and favicons.
+- Using Gulp to automate build, minify files, optimize images and browser live reloading.
+- Using Bootstrap to grid and compponents.
+- Using jQuery, AnimateCSS and Wow.JS to animations and DOM manipulation.
+- Using Sketch to design and favicons.
