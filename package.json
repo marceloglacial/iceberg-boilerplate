@@ -1,7 +1,7 @@
 {
-  "name": "sfcosta-wordpress-theme",
+  "name": "iceberg-boilerplate",
   "version": "1.0.0",
-  "description": "Sylvia F Costa Wordpress Theme",
+  "description": "Iceberg Wordpress Boilerplate",
   "main": "index.js",
   "dependencies": {
     "browser-sync": "^2.18.13",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/glacial/sfcosta-wordpress-theme.git"
+    "url": "git+ssh://git@gitlab.com/glacial/iceberg-boilerplate.git"
   },
   "author": "Marcelo Glacial",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/glacial/sfcosta-wordpress-theme/issues"
+    "url": "https://github.com/marceloglacial/iceberg-boilerplate/issues"
   },
-  "homepage": "https://gitlab.com/glacial/sfcosta-wordpress-theme#README"
+  "homepage": "https://github.com/marceloglacial/iceberg-boilerplate/#README"
 }
