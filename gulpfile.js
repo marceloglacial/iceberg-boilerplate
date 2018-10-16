@@ -1,16 +1,16 @@
-var gulp = require('gulp');
-var del = require('del');
-var browserSync = require('browser-sync').create();
-var cleanCSS = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
-var pump = require('pump');
-var smushit = require('gulp-smushit');
-var autoprefixer = require('gulp-autoprefixer');
-var gulpSequence = require('gulp-sequence')
-var {
+const gulp = require('gulp');
+const del = require('del');
+const browserSync = require('browser-sync').create();
+const cleanCSS = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
+const pump = require('pump');
+const smushit = require('gulp-smushit');
+const autoprefixer = require('gulp-autoprefixer');
+const gulpSequence = require('gulp-sequence')
+const {
     phpMinify
 } = require('@cedx/gulp-php-minify');
-var minifyHTML = require('gulp-minify-html');
+const minifyHTML = require('gulp-minify-html');
 
 
 // Configre Project
