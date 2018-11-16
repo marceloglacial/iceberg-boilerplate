@@ -21,8 +21,8 @@ A starter kit to new Wordpress projects.
 - Install Apache, PHP and MySQL to run WordPress (e.g.: [XAMPP](https://www.apachefriends.org/download.html), [MAMPP](https://www.mamp.info/en/))
 - Start servers
 - Create a database for Wordpress
-- [Install npm] (https://www.npmjs.com/get-npm)
-- [Install Gulp] (https://gulpjs.com)
+- [Install npm](https://www.npmjs.com/get-npm)
+- [Install Gulp](https://gulpjs.com)
 - Optional: [Configure installation](#how-to-configure-installation)
 - Open terminal and run
     - npm install 
