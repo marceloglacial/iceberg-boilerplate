@@ -18,9 +18,11 @@ A starter kit to new Wordpress projects.
 ## Instructions
 
 ### How to Install 
-- Install Apache, PHP and MySQL to run WordPress (e.g.: [XAMPP](https://www.apachefriends.org/download.html), [MAMPP](https://www.mamp.info/en/))
+- Install Apache, MySQL and PHP to run WordPress (e.g.: [XAMPP](https://www.apachefriends.org/download.html), [MAMP](https://www.mamp.info/en/))
 - Start servers
 - Create a database for Wordpress
+- [Install npm](https://www.npmjs.com/get-npm)
+- [Install Gulp](https://gulpjs.com)
 - Optional: [Configure installation](#how-to-configure-installation)
 - Open terminal and run
     - npm install 
@@ -31,7 +33,7 @@ A starter kit to new Wordpress projects.
 ### How to configure installation
 You can change this settings on gulpfile.js
 - wpUrl = Link to download WordPress (Default: 'https://wordpress.org/')
-- wpVesrion = WordPress Version (Default:'latest.zip')
+- wpVersion = WordPress Version (Default:'latest.zip')
 - wpThemeName = Theme name (Default:'iceberg-boilerplate')
 - LocalServer = Local server url (Default:'http://localhost:8888/')
 
