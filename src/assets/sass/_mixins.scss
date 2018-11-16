@@ -1,42 +1,23 @@
 
-// =======================================================
-// Responsive Mode
-// =======================================================
-
-
-// Iphone X 
-// =======================================================
-#services {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-}
-
-// Large devices (desktops, less than 1200px) 
-// =======================================================
-@media (max-width: 1199px) {
-
-}
-
-// Medium devices (tablets, less than 992px) 
-// =======================================================
-@media (max-width: 991px) {
-    
-}
-
-// Small devices (landscape phones, less than 768px)
-// =======================================================
-@media (max-width: 767px) {
-    /* none */
-}
-
-// Extra small devices (portrait phones, less than 576px)
-// =======================================================
-@media (max-width: 575px) {
-    
-}
-
-// Extra Extra small devices (iphone 5s/se) 
-// =======================================================
-@media (max-width: 320px) {
-    
+// Responsive Breakpoints  - https://engageinteractive.co.uk/blog/top-10-scss-mixins
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
 }
