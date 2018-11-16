@@ -6,13 +6,21 @@ const decompress = require('gulp-decompress');
 
 // Configre Project
 // =======================================
-var wordpressUrl = 'https://wordpress.org/'
-var wordpressVesrion = 'latest.zip'
+var wpUrl = 'https://wordpress.org/'
+var wpVesrion = 'latest.zip'
+var wpThemeName = 'iceber-boilerplate'
+
+// Reset 
+// =======================================
+gulp.task('reset', () =>
+    del(['tmp', 'download', 'server'])
+);
+
 
 // Install Wordpress
 // =======================================
 gulp.task('wp-download', () =>
-    download(wordpressUrl + wordpressVesrion)
+    download(wpUrl + wpVesrion)
 	.pipe(gulp.dest("./tmp"))
 );
 gulp.task('wp-unzip', () =>
@@ -23,10 +31,8 @@ gulp.task('wp-unzip', () =>
 gulp.task('wp-clean', () =>
     del(['tmp', 'download'])
 );
-gulp.task('wp-install', gulp.series('wp-clean', 'wp-download', 'wp-unzip', 'wp-clean'));
-
-// Reset 
-// =======================================
-gulp.task('reset', () =>
-    del(['tmp', 'download', 'server'])
+gulp.task('wp-copy', () =>
+    gulp.src('./src/*.*')
+        .pipe(gulp.dest('./server/wp-content/themes/' + wpThemeName))
 );
+gulp.task('wp-install', gulp.series('wp-clean', 'wp-download', 'wp-unzip', 'wp-copy', 'wp-clean'));
