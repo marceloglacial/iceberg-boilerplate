@@ -33,7 +33,7 @@ A starter kit to new Wordpress projects.
 ### How to configure installation
 You can change this settings on gulpfile.js
 - wpUrl = Link to download WordPress (Default: 'https://wordpress.org/')
-- wpVesrion = WordPress Version (Default:'latest.zip')
+- wpVersion = WordPress Version (Default:'latest.zip')
 - wpThemeName = Theme name (Default:'iceberg-boilerplate')
 - LocalServer = Local server url (Default:'http://localhost:8888/')
 

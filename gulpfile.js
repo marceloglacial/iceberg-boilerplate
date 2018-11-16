@@ -7,7 +7,7 @@ const browserSync = require('browser-sync').create();
 // Configre Project
 // =======================================
 var wpUrl = 'https://wordpress.org/'
-var wpVesrion = 'latest.zip'
+var wpVersion = 'latest.zip'
 var wpThemeName = 'iceberg-boilerplate'
 var localServer = 'http://localhost:8888/'
 
@@ -21,7 +21,7 @@ gulp.task('reset', () =>
 // Install Wordpress
 // =======================================
 gulp.task('wp-download', () =>
-    download(wpUrl + wpVesrion)
+    download(wpUrl + wpVersion)
 	.pipe(gulp.dest("./tmp"))
 );
 gulp.task('wp-unzip', () =>
