@@ -8,9 +8,37 @@
 Iceberg Wordpress Boilerplate. 
 A starter kit to new Wordpress projects.
 
+
 ## Features
 
 - Using Gulp to automate build, minify files, optimize images and browser live reloading.
-- Using Bootstrap to grid and compponents.
-- Using jQuery, AnimateCSS and Wow.JS to animations and DOM manipulation.
 - Using Sketch to design and favicons.
+
+
+## Instructions
+
+### How to Install 
+- Install Apache, PHP and MySQL to run WordPress (e.g.: [XAMPP](https://www.apachefriends.org/download.html), [MAMPP](https://www.mamp.info/en/))
+- Start servers
+- Create a database for Wordpress
+- Optional: [Configure installation](#how-to-configure-installation)
+- Open terminal and run
+    - npm install 
+    - npm audit fix --force
+    - gulp install
+
+
+### How to configure installation
+You can change this settings on gulpfile.js
+- wpUrl = Link to download WordPress (Default: 'https://wordpress.org/')
+- wpVesrion = WordPress Version (Default:'latest.zip')
+- wpThemeName = Theme name (Default:'iceberg-boilerplate')
+- LocalServer = Local server url (Default:'http://localhost:8888/')
+
+
+
+## Versions
+
+### 1.0.1 
+- Add Wordpress instalation
+- Update to Gulp 4.0

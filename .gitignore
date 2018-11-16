@@ -112,3 +112,7 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/node,macos,windows
+package-lock.json
+
+# Wordpress Server
+server/*
