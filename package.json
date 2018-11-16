@@ -9,7 +9,7 @@
   "dependencies": {
     "browser-sync": "latest",
     "del": "latest",
-    "gulp": "^4.0.0",
+    "gulp": "latest",
     "gulp-decompress": "latest",
     "gulp-download": "latest"
   },
