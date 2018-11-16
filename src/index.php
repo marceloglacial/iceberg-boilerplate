@@ -40,8 +40,6 @@
     <meta property="og:locale" content="en_US">
 
     <!-- STYLES -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/vendor/css/animate.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/main.css">
 
     <!-- FONTS -->
@@ -89,9 +87,6 @@
     <!-- /WRAPPER -->
 
     <!-- SCRIPTS -->
-    <script async src="<?php bloginfo('template_url'); ?>/vendor/js/jquery.min.js"></script>
-    <script async src="<?php bloginfo('template_url'); ?>/vendor/js/bootstrap.min.js"></script>
-    <script async src="<?php bloginfo('template_url'); ?>/vendor/js/wow.min.js"></script>
     <script async src="<?php bloginfo('template_url'); ?>/assets/js/main.js"></script>
     <?php wp_footer(); ?>
 </body>
