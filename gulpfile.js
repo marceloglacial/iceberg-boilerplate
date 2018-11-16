@@ -2,13 +2,14 @@ const gulp = require('gulp');
 const del = require('del');
 const download = require('gulp-download');
 const decompress = require('gulp-decompress');
-
+const browserSync = require('browser-sync').create();
 
 // Configre Project
 // =======================================
 var wpUrl = 'https://wordpress.org/'
 var wpVesrion = 'latest.zip'
 var wpThemeName = 'iceber-boilerplate'
+var localServer = 'http://localhost:8888/'
 
 // Reset 
 // =======================================
@@ -36,3 +37,11 @@ gulp.task('wp-copy', () =>
         .pipe(gulp.dest('./server/wp-content/themes/' + wpThemeName))
 );
 gulp.task('wp-install', gulp.series('wp-clean', 'wp-download', 'wp-unzip', 'wp-copy', 'wp-clean'));
+
+
+// Local Server 
+gulp.task('serv', () => 
+    browserSync.init({
+        proxy: localServer + wpThemeName + "/server/"
+    })
+);

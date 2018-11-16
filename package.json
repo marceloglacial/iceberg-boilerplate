@@ -7,8 +7,9 @@
     "doc": "docs"
   },
   "dependencies": {
+    "browser-sync": "latest",
     "del": "latest",
-    "gulp": "latest",
+    "gulp": "^4.0.0",
     "gulp-decompress": "latest",
     "gulp-download": "latest"
   },
