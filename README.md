@@ -43,6 +43,7 @@ You can change this settings on gulpfile.js
 
 ### 1.0.2
 - Minify CSS
+- Added SASS
 
 ### 1.0.1 
 - Add Wordpress instalation

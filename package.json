@@ -12,7 +12,11 @@
     "gulp": "^4.0.0",
     "gulp-decompress": "latest",
     "gulp-download": "latest",
-    "gulp-sass": "latest"
+    "gulp-sass": "latest",
+    "gulp-postcss": "latest",
+    "autoprefixer": "latest",
+    "cssnano": "latest",
+    "gulp-sourcemaps": "latest"
   },
   "repository": {
     "type": "git",

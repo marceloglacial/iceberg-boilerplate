@@ -4,6 +4,10 @@ const download = require('gulp-download');
 const decompress = require('gulp-decompress');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+const sourcemaps = require("gulp-sourcemaps");
 
 
 // Configre Project
@@ -25,8 +29,11 @@ function style() {
     return (
         gulp
             .src("src/assets/sass/*.*")
+            .pipe(sourcemaps.init())
             .pipe(sass())
             .on("error", sass.logError)
+            .pipe(postcss([autoprefixer(), cssnano()]))
+            .pipe(sourcemaps.write())
             .pipe(gulp.dest("src/assets/css"))
     );
 }
