@@ -18,10 +18,10 @@ A starter kit to new Wordpress projects.
 ## Instructions
 
 ### How to Install 
-- Install Apache, PHP and MySQL to run WordPress (e.g.: [XAMPP](https://www.apachefriends.org/download.html), [MAMPP](https://www.mamp.info/en/)
+- Install Apache, PHP and MySQL to run WordPress (e.g.: [XAMPP](https://www.apachefriends.org/download.html), [MAMPP](https://www.mamp.info/en/))
 - Start servers
 - Create a database for Wordpress
-- Optional: Configure installation (See below)
+- Optional: [Configure installation](#how-to-configure-installation)
 - Open terminal and run
     - npm install 
     - npm audit fix --force
