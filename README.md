@@ -21,9 +21,10 @@ A starter kit to new Wordpress projects.
 - Install Apache, PHP and MySQL to run WordPress
 - Start servers
 - Create a database for Wordpress
-- npm install 
-- npm audit fix --force
-- gulp install
+- Open terminal and run
+    - npm install 
+    - npm audit fix --force
+    - gulp install
 
 ### How to configure
 You can change this settings on gulpfile.js
