@@ -72,6 +72,7 @@
                     <?php the_author_posts_link(); ?>
                 </small>
 
+
                 <div class="entry">
                     <?php the_content(); ?>
                 </div>
@@ -80,8 +81,6 @@
                 <p>
                     <?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?>
                 </p>
-
-
                 <!-- STOP THE LOOP -->
                 <?php endif; ?>
         </main>

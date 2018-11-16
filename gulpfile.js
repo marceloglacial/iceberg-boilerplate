@@ -8,7 +8,7 @@ const browserSync = require('browser-sync').create();
 // =======================================
 var wpUrl = 'https://wordpress.org/'
 var wpVesrion = 'latest.zip'
-var wpThemeName = 'iceber-boilerplate'
+var wpThemeName = 'iceberg-boilerplate'
 var localServer = 'http://localhost:8888/'
 
 // Reset 
@@ -32,16 +32,19 @@ gulp.task('wp-unzip', () =>
 gulp.task('wp-clean', () =>
     del(['tmp', 'download'])
 );
-gulp.task('wp-copy', () =>
+gulp.task('wp-copy', wpCopy);
+function wpCopy(done) {
     gulp.src('./src/*.*')
         .pipe(gulp.dest('./server/wp-content/themes/' + wpThemeName))
-);
-gulp.task('wp-install', gulp.series('wp-clean', 'wp-download', 'wp-unzip', 'wp-copy', 'wp-clean'));
+        done();
+};
 
-
-// Local Server 
-gulp.task('serv', () => 
+gulp.task('start', start);
+function start() {
     browserSync.init({
         proxy: localServer + wpThemeName + "/server/"
     })
-);
+    gulp.watch("src/**/*.*").on('change', gulp.series(['wp-copy', browserSync.reload]))
+};
+
+gulp.task('install', gulp.series('wp-clean', 'wp-download', 'wp-unzip', 'wp-copy', 'wp-clean', 'start'));

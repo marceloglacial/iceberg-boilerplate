@@ -12,16 +12,25 @@ A starter kit to new Wordpress projects.
 ## Features
 
 - Using Gulp to automate build, minify files, optimize images and browser live reloading.
-- Using Bootstrap to grid and compponents.
-- Using jQuery, AnimateCSS and Wow.JS to animations and DOM manipulation.
 - Using Sketch to design and favicons.
 
 
 ## Instructions
 
+### How to Install 
+- Install Apache, PHP and MySQL to run WordPress
+- Start servers
+- Create a database for Wordpress
 - npm install 
 - npm audit fix --force
 - gulp install
+
+### How to configure
+You can change this settings on gulpfile.js
+- wpUrl = Link to download WordPress (Default: 'https://wordpress.org/')
+- wpVesrion = WordPress Version (Default:'latest.zip')
+- wpThemeName = Theme name (Default:'iceberg-boilerplate')
+- LocalServer = Local server url (Default:'http://localhost:8888/')
 
 
 ## Versions
