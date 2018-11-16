@@ -14,7 +14,7 @@ var localServer = 'http://localhost:8888/'
 // Reset 
 // =======================================
 gulp.task('reset', () =>
-    del(['tmp', 'download', 'server'])
+    del(['tmp', 'download', 'server', 'node_modules'])
 );
 
 
