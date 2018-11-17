@@ -4,77 +4,138 @@ const download = require('gulp-download');
 const decompress = require('gulp-decompress');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
-const cssnano = require("cssnano");
-const sourcemaps = require("gulp-sourcemaps");
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const newer = require('gulp-newer');
+gulp-newer
 
+// Paths
+const paths = {
+    wordpress: {
+        url: 'https://wordpress.org',
+        version: 'latest.zip',
+        themeName: 'iceberg-boilerplate',
+        proxy: 'http://localhost:8888',
+        server: 'server',
+        tmp: 'tmp'
+    },
+    root: {
+        all: './src/**/*.*'
+    },
+    styles: {
+        src: './src/assets/css/src/*.*',
+        dest: './src/assets/css/'
+    },
+    scripts: {
+        src: './src/assets/js/src/*.js',
+        dest: './src/assets/js/'
+    }
+};
 
-// Configre Project
-// =======================================
-var wpUrl = 'https://wordpress.org/'
-var wpVersion = 'latest.zip'
-var wpThemeName = 'iceberg-boilerplate'
-var localServer = 'http://localhost:8888/'
+// Download Wordpress
+function wpDownload() {
+    return (
+        download(paths.wordpress.url + '/' + paths.wordpress.version)
+        .pipe(gulp.dest(paths.wordpress.tmp))
+    ) 
+}
+exports.wpDownload = wpDownload
 
-// Reset 
-// =======================================
-gulp.task('reset', () =>
-    del(['tmp', 'download', 'server', 'node_modules'])
-);
+// Decompress Wordpress and add to server folder
+function wpUnzip() {
+    return (
+        gulp.src(paths.wordpress.tmp + '/*.{tar,tar.bz2,tar.gz,zip}')
+        .pipe(decompress({strip: 1}))
+        .pipe(gulp.dest(paths.wordpress.server))
+    )
+}
+exports.wpUnzip = wpUnzip
 
-// Minfy Files
-// =======================================
-function style() {
+// Copy file from work folder to server folder
+function wpCopy() {
+    return (
+        gulp.src(paths.root.all)
+        .pipe(gulp.dest(paths.wordpress.server + '/wp-content/themes/' + paths.wordpress.themeName))
+    )
+}
+exports.wpCopy = wpCopy
+
+// Delete WordPress files
+function wpClean() {
+    return (
+        del([paths.wordpress.tmp, paths.wordpress.server])
+    )
+}
+exports.wpClean = wpClean
+
+// Install project
+const install = gulp.series(wpClean, wpDownload, wpUnzip, wpCopy, () => del(paths.wordpress.tmp), start)
+gulp.task('install', install)
+
+// Minify CSS with SASS
+function styles() {
     return (
         gulp
-            .src("src/assets/sass/*.*")
+            .src(paths.styles.src)
             .pipe(sourcemaps.init())
             .pipe(sass())
-            .on("error", sass.logError)
+            .on('error', sass.logError)
             .pipe(postcss([autoprefixer(), cssnano()]))
             .pipe(sourcemaps.write())
-            .pipe(gulp.dest("src/assets/css"))
+            .pipe(gulp.dest(paths.styles.dest))
+            .pipe(browserSync.stream())
     );
 }
-exports.style = style;
+exports.styles = styles
 
-function sassWatch(){
-    gulp.watch('src/assets/sass/*.*', style)
+// Minify JavaScript
+function scripts() {
+    return (
+        gulp.src(paths.scripts.src, {
+            sourcemaps: true
+        })
+        .pipe(uglify())
+        .pipe(concat('main.min.js'))
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.stream())
+        );
 }
-exports.watch = sassWatch
+exports.scripts = scripts
 
-// Install Wordpress and start serve
-// =======================================
-gulp.task('wp-download', () =>
-    download(wpUrl + wpVersion)
-	.pipe(gulp.dest("./tmp"))
-);
-gulp.task('wp-unzip', () =>
-    gulp.src('./tmp/*.{tar,tar.bz2,tar.gz,zip}')
-        .pipe(decompress({strip: 1}))
-        .pipe(gulp.dest('./server/'))
-);
-gulp.task('wp-clean', () =>
-    del(['tmp', 'download'])
-);
-gulp.task('wp-watch-clean', () =>
-    del('server/wp-content/themes/' + wpThemeName)
-);
-gulp.task('wp-copy', wpCopy);
-function wpCopy(done) {
-    gulp.src('src/**/*.*')
-        .pipe(gulp.dest('server/wp-content/themes/' + wpThemeName))
-        done();
-};
+// Build Files
+function build() {
+    return (
+        gulp.src(paths.root.all)
+        .pipe(gulp.dest(paths.wordpress.server + '/wp-content/themes/' + paths.wordpress.themeName))
+        .pipe(browserSync.stream())
+    )
+}
 
-gulp.task('start', start);
-function start() {
+// Watch Files
+function watch() {
+    gulp.watch(paths.scripts.src, scripts)
+    gulp.watch(paths.styles.src, styles)
+    gulp.watch(paths.root.all, build)
+}
+exports.watch = watch
+
+// Start server
+function start(){
     browserSync.init({
-        proxy: localServer + wpThemeName + "/server/"
-    })
-    gulp.watch("src/**/*.*").on('change', gulp.series(['wp-watch-clean', 'wp-copy', browserSync.reload]))
-    gulp.watch('src/assets/sass/*.*', style)
-};
+        proxy: paths.wordpress.proxy + '/' + paths.wordpress.themeName + '/' + paths.wordpress.server
+    });
+    watch()
+}
+exports.start = start
 
-gulp.task('install', gulp.series('wp-clean', 'wp-download', 'wp-unzip', 'wp-copy', 'wp-clean', 'start'));
+
+
+// !!!! DANGER !!!! 
+// =======================================
+const reset = gulp.series(wpClean, () => del([paths.wordpress.tmp, 'node_modules']))
+gulp.task('reset', reset)
+// =======================================

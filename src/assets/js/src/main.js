@@ -24,7 +24,3 @@ $(document).ready(function () {
         } // End if
     });
 });
-
-// Animations 
-
-new WOW().init();
