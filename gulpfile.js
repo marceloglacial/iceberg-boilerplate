@@ -10,8 +10,7 @@ const cssnano = require('cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
-const newer = require('gulp-newer');
-gulp-newer
+const imagemin = require('gulp-imagemin');
 
 // Paths
 const paths = {
@@ -32,6 +31,10 @@ const paths = {
     },
     scripts: {
         src: './src/assets/js/src/*.js',
+        dest: './src/assets/js/'
+    },
+    images: {
+        src: './src/assets/img/*.js',
         dest: './src/assets/js/'
     }
 };
@@ -105,6 +108,13 @@ function scripts() {
         );
 }
 exports.scripts = scripts
+
+// Minify Images
+function images() {
+    return gulp.src('src/assets/img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/assets/img'))
+};
 
 // Build Files
 function build() {
