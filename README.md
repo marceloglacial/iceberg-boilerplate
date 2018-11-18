@@ -5,7 +5,6 @@
 
 ## Description
 
-Iceberg Wordpress Boilerplate. 
 A starter kit to new Wordpress projects.
 
 
@@ -24,7 +23,8 @@ A starter kit to new Wordpress projects.
 - [Install npm](https://www.npmjs.com/get-npm)
 - [Install Gulp](https://gulpjs.com)
 - Optional: [Configure installation](#how-to-configure-installation)
-- Open terminal and run
+
+#### Open terminal and run
 ```console
     npm install 
     npm audit fix --force
@@ -70,9 +70,9 @@ const paths = {
 
 Creates a zip file with minified CSS, JS, PHP and images. 
 
-
+```console
 gulp deploy
-
+```
 
 
 ## Versions
