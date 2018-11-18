@@ -32,12 +32,38 @@ A starter kit to new Wordpress projects.
 
 ### How to configure installation
 You can change this settings on gulpfile.js
-- wpUrl = Link to download WordPress (Default: 'https://wordpress.org/')
-- wpVersion = WordPress Version (Default: 'latest.zip')
-- wpThemeName = Theme name (Default: 'iceberg-boilerplate')
-- LocalServer = Local server url (Default: 'http://localhost:8888/')
 
-
+```javascript
+// Paths
+const paths = {
+    wordpress: {
+        url: 'https://wordpress.org',
+        version: 'latest.zip',
+        themeName: 'iceberg-boilerplate',
+        proxy: 'http://localhost:8888',
+        server: 'server',
+        tmp: 'tmp'
+    },
+    project: {
+        all: './src/**/*.*',
+        src: './src/',
+        dist: './dist/',
+        deploy: './deploy/'
+    },
+    styles: {
+        src: './src/assets/css/src/*.*',
+        dest: './src/assets/css/',
+    },
+    scripts: {
+        src: './src/assets/js/src/*.js',
+        dest: './src/assets/js/',
+    },
+    images: {
+        src: './src/assets/img/*.*',
+        dest: './dist/assets/img/',
+    }
+};
+```
 
 ## Versions
 
