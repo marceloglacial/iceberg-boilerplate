@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "dependencies": {
+    "gulp-zip": "latest",
     "autoprefixer": "latest",
     "browser-sync": "latest",
     "cssnano": "latest",
