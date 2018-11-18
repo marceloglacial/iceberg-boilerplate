@@ -70,6 +70,8 @@ Creates a zip file with minified CSS, JS, PHP and images.
 gulp deploy
 ```
 
+### Recomended CD/CI
+    - [Buddy](https://buddy.works/pricing) to deploy to a FTP serve.
 
 ## Versions
 
