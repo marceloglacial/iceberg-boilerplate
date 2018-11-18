@@ -65,10 +65,7 @@ const paths = {
 ## Deploy 
 
 Creates a zip file with minified CSS, JS, PHP and images. 
-
-```console
-gulp deploy
-```
+- `gulp deploy`
 
 ### Recomended CD/CI
 - [Buddy](https://buddy.works/pricing) to deploy to a FTP serve.
