@@ -30,15 +30,15 @@ const paths = {
     },
     styles: {
         src: './src/assets/css/src/*.*',
-        dest: './src/assets/css/'
+        dest: './src/assets/css/',
     },
     scripts: {
         src: './src/assets/js/src/*.js',
-        dest: './src/assets/js/'
+        dest: './src/assets/js/',
     },
     images: {
-        src: './src/assets/img/*.js',
-        dest: './src/assets/js/'
+        src: './src/assets/img/*.*',
+        dest: './dist/assets/img/',
     }
 };
 
@@ -118,9 +118,9 @@ exports.scripts = scripts
 function images() {
     return (
         gulp
-            .src('src/assets/img/*')
+            .src(paths.images.src)
             .pipe(imagemin())
-            .pipe(gulp.dest('dist/assets/img'))
+            .pipe(gulp.dest(paths.images.dest))
     ) 
 };
 exports.images = images
@@ -129,7 +129,7 @@ exports.images = images
 function html() {
     return (
         gulp
-            .src(paths.project.src + '/**/*.{html, html, php')
+            .src(paths.project.src + '/**/*.php')
             .pipe(htmlmin({ collapseWhitespace: true, removeComments: true, minifyCSS: true, minifyJS: true }))
             .pipe(gulp.dest(paths.project.dist))
     )
@@ -151,8 +151,9 @@ exports.live = live
 
 // Watch Files
 function watch() {
-    gulp.watch(paths.styles.src, styles) // sass
-    gulp.watch(paths.project.all, live) // copy files to server and refresh browser
+    gulp.watch(paths.styles.src, styles)
+    gulp.watch(paths.scripts.src, scripts)
+    gulp.watch(paths.project.all, live)
 }
 exports.watch = watch
 
@@ -164,6 +165,20 @@ function start() {
     watch()
 }
 exports.start = start
+
+// Build 
+function copy() {
+    return (
+        gulp
+        .src(paths.project.all)
+        .pipe(gulp.dest(paths.project.dist))
+    )
+}
+exports.copy = copy
+
+const build = gulp.series(() => del(paths.project.dist), styles, scripts, copy, images, html)
+gulp.task('build', build)
+
 
 
 // !!!! DANGER !!!! 
