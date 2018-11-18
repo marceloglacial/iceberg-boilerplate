@@ -41,8 +41,14 @@ You can change this settings on gulpfile.js
 
 ## Versions
 
+### 1.0.3
+- Deploy tasks
+
 ### 1.0.2
 - Minify CSS
+- Minify HTML/PHP
+- Minify JS
+- Minify images
 - Added SASS
 
 ### 1.0.1 
