@@ -40,7 +40,7 @@
     <meta property="og:locale" content="en_US">
 
     <!-- STYLES -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/main.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/styles.css?v=1.0.2">
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -87,7 +87,7 @@
     <!-- /WRAPPER -->
 
     <!-- SCRIPTS -->
-    <script async src="<?php bloginfo('template_url'); ?>/assets/js/main.js"></script>
+    <script async src="<?php bloginfo('template_url'); ?>/assets/js/main.min.js"></script>
     <?php wp_footer(); ?>
 </body>
 
