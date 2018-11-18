@@ -22,10 +22,14 @@ A starter kit to new Wordpress projects.
 4. [Install npm](https://www.npmjs.com/get-npm)
 5. [Install Gulp](https://gulpjs.com)
 6. Optional: [Configure installation](#how-to-configure-installation)
-7. Open terminal and run
-    - `npm install` 
-    - `npm audit fix --force`
-    - `gulp install`
+
+### Open terminal and run
+
+```terminal
+    npm install 
+    npm audit fix --force
+    gulp install
+```
 
 ### How to configure installation
 You can change this settings on gulpfile.js
@@ -65,10 +69,13 @@ const paths = {
 ## Deploy 
 
 Creates a zip file with minified CSS, JS, PHP and images. 
-- `gulp deploy`
+
+```terminal
+gulp deploy
+```
 
 ### Recomended CD/CI
-- [Buddy](https://buddy.works/pricing) to deploy to a FTP serve.
+- [Buddy](https://buddy.works/pricing)
 
 ## Versions
 
