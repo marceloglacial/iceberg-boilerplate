@@ -75,7 +75,7 @@ gulp deploy
 ```
 
 ### Recomended CD/CI
-- [Buddy](https://buddy.works/pricing) to deploy to a FTP serve.
+- [Buddy](https://buddy.works/pricing)
 
 ## Versions
 
