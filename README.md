@@ -42,14 +42,15 @@ You can change this settings on gulpfile.js
 ## Versions
 
 ### 1.0.3
-- Deploy tasks
+- Create deploy tasks
+- Add zip to deploy options
 
 ### 1.0.2
-- Minify CSS
-- Minify HTML/PHP
-- Minify JS
-- Minify images
-- Added SASS
+- Add Minify CSS
+- Add Minify HTML/PHP
+- Add Minify JS
+- Add Minify images
+- Add SASS
 
 ### 1.0.1 
 - Add Wordpress instalation
