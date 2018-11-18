@@ -12,6 +12,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const zip = require('gulp-zip');
 
 // Paths
 const paths = {
@@ -26,7 +27,8 @@ const paths = {
     project: {
         all: './src/**/*.*',
         src: './src/',
-        dist: './dist/'
+        dist: './dist/',
+        deploy: './deploy/'
     },
     styles: {
         src: './src/assets/css/src/*.*',
@@ -170,8 +172,8 @@ exports.start = start
 function copy() {
     return (
         gulp
-        .src(paths.project.all)
-        .pipe(gulp.dest(paths.project.dist))
+            .src(paths.project.all)
+            .pipe(gulp.dest(paths.project.dist))
     )
 }
 exports.copy = copy
@@ -179,10 +181,23 @@ exports.copy = copy
 const build = gulp.series(() => del(paths.project.dist), styles, scripts, copy, images, html)
 gulp.task('build', build)
 
+// Deploy
+function zipfiles() {
+    return (
+        gulp
+            .src(paths.project.dist + '/**/*')
+            .pipe(zip(paths.wordpress.themeName + '.zip'))
+            .pipe(gulp.dest(paths.project.deploy))
+    )
+}
+exports.zipfiles = zipfiles
+
+const deploy = gulp.series(() => del(paths.project.dist), build, zipfiles)
+gulp.task('deploy', deploy)
 
 
 // !!!! DANGER !!!! 
 // =======================================
-const reset = gulp.series(wpClean, () => del(['node_modules', paths.project.dist, paths.wordpress.tmp, paths.wordpress.server]))
+const reset = gulp.series(wpClean, () => del(['node_modules', paths.project.deploy, paths.project.dist, paths.wordpress.tmp, paths.wordpress.server]))
 gulp.task('reset', reset)
 // =======================================
