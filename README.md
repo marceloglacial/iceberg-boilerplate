@@ -14,22 +14,20 @@ A starter kit to new Wordpress projects.
 - Using Sketch to design and favicons.
 
 
-## Instructions
+## Installation
 
-### How to Install 
-- Install Apache, MySQL and PHP to run WordPress (e.g.: [XAMPP](https://www.apachefriends.org/download.html), [MAMP](https://www.mamp.info/en/))
-- Start servers
-- Create a database for Wordpress
-- [Install npm](https://www.npmjs.com/get-npm)
-- [Install Gulp](https://gulpjs.com)
-- Optional: [Configure installation](#how-to-configure-installation)
-
-#### Open terminal and run
-```console
-    npm install 
-    npm audit fix --force
-    gulp install
-````
+1. Install Apache, MySQL and PHP to run WordPress (e.g.: [XAMPP](https://www.apachefriends.org/download.html), [MAMP](https://www.mamp.info/en/))
+2. Start servers
+3. Create a database for Wordpress
+4. [Install npm](https://www.npmjs.com/get-npm)
+5. [Install Gulp](https://gulpjs.com)
+6. Optional: [Configure installation](#how-to-configure-installation)
+7. Open terminal and run
+    - ```console
+        npm install 
+        npm audit fix --force
+        gulp install
+    ````
 
 ### How to configure installation
 You can change this settings on gulpfile.js
