@@ -7,19 +7,20 @@
     "doc": "docs"
   },
   "dependencies": {
+    "autoprefixer": "latest",
     "browser-sync": "latest",
+    "cssnano": "latest",
     "del": "latest",
     "gulp": "^4.0.0",
+    "gulp-concat": "latest",
     "gulp-decompress": "latest",
     "gulp-download": "latest",
-    "gulp-sass": "latest",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "latest",
     "gulp-postcss": "latest",
-    "autoprefixer": "latest",
-    "cssnano": "latest",
+    "gulp-sass": "latest",
     "gulp-sourcemaps": "latest",
-    "gulp-uglify": "latest",
-    "gulp-concat": "latest",
-    "gulp-imagemin": "latest"
+    "gulp-uglify": "latest"
   },
   "repository": {
     "type": "git",
