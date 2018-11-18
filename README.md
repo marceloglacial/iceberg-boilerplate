@@ -23,11 +23,9 @@ A starter kit to new Wordpress projects.
 5. [Install Gulp](https://gulpjs.com)
 6. Optional: [Configure installation](#how-to-configure-installation)
 7. Open terminal and run
-    - ```console
-        npm install 
-        npm audit fix --force
-        gulp install
-    ````
+    - `npm install` 
+    - `npm audit fix --force`
+    - `gulp install`
 
 ### How to configure installation
 You can change this settings on gulpfile.js
