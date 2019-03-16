@@ -1,7 +1,6 @@
-# Iceberg Boilerplate
+# Iceberg Boilerplate (discontinued)
 
-* Created by Marcelo Glacial
-* Starts on 05/2017
+Please, see SnowFall Boilerplate: https://github.com/marceloglacial/snowfall-boilerplate
 
 ## Description
 
