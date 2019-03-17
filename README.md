@@ -1,6 +1,6 @@
 # Iceberg Boilerplate (discontinued)
 
-Please, see SnowFall Boilerplate: https://github.com/marceloglacial/snowfall-boilerplate
+This project envolved to SnowFall Boilerplate: https://github.com/marceloglacial/snowfall-boilerplate
 
 ## Description
 
