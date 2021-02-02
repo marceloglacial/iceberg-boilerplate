@@ -16,15 +16,16 @@ A template for new Wordpress Theme projects.
 ## Installation
 
 1. [Install npm](https://www.npmjs.com/get-npm)
-2. run `npm install`
+2. run `npm install yarn`
+3. run `yarn install`
 
 
 ## How to Use
 
 ### Development 
 
-`npm run dev`
+`yarn dev`
 
 ### Build
 
-`npm run build`
+`yarn build`
