@@ -19,9 +19,7 @@ A template for new Wordpress Theme projects.
 2. run `npm install yarn`
 3. run `yarn install`
 
-
 ## How to Use
-
 ### Development 
 
 `yarn dev`
@@ -29,3 +27,8 @@ A template for new Wordpress Theme projects.
 ### Build
 
 `yarn build`
+
+## References
+
+- [Underscores.me](https://underscores.me/) base template
+- [Snowflake Boilerplate](https://github.com/marceloglacial/snowflake-boilerplate) base html, csss and template files
