@@ -13,11 +13,41 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+	<noscript>
+		<div class="alert alert-danger" role="alert">
+			You need to enable JavaScript to run this app.
+		</div>
+    </noscript>
+	
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover">
+	
 	<title><?php bloginfo( 'title' ); ?> - <?php bloginfo( 'description' ); ?></title>
+	<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
+
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/index.css' ?>" as="style" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/index.js' ?>" as="script" />
+
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<link rel="apple-touch-icon" href="tile.png" />
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="msapplication-config" content="browserconfig.xml" />
+
+	<meta property="og:type" content="website" />
+    <meta property="og:url" content="<?php bloginfo( 'url' ); ?>" />
+    <meta property="og:title" content="<?php bloginfo( 'title' ); ?>" />
+    <meta property="og:image" content="tile-wide.png" />
+    <meta property="og:description" content="<?php bloginfo( 'description' ); ?>" />
+    <meta property="og:site_name" content="<?php bloginfo( 'title' ); ?>" />
+	<meta property="og:locale" content="<?php bloginfo( 'language' ); ?>" />
+
 	<link rel='stylesheet' href='<?php echo get_template_directory_uri() . '/assets/index.css' ?>' />
+	
 	<?php wp_head(); ?>
 </head>
 
