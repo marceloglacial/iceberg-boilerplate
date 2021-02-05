@@ -28,25 +28,25 @@
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/index.css' ?>" as="style" />
-    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/index.js' ?>" as="script" />
+	<link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/css/styles.css' ?>" as="style" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/js/index.js' ?>" as="script" />
 
-	<link rel="icon" type="image/png" href="favicon.png" />
-	<link rel="apple-touch-icon" href="tile.png" />
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() ?>/favicon.png" />
+	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/tile.png" />
 
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="msapplication-config" content="browserconfig.xml" />
+	<meta name="msapplication-config" content="<?php echo get_template_directory_uri() ?>/browserconfig.xml" />
 
 	<meta property="og:type" content="website" />
     <meta property="og:url" content="<?php bloginfo( 'url' ); ?>" />
     <meta property="og:title" content="<?php bloginfo( 'title' ); ?>" />
-    <meta property="og:image" content="tile-wide.png" />
+    <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/tile-wide.png" />
     <meta property="og:description" content="<?php bloginfo( 'description' ); ?>" />
     <meta property="og:site_name" content="<?php bloginfo( 'title' ); ?>" />
 	<meta property="og:locale" content="<?php bloginfo( 'language' ); ?>" />
 
-	<link rel='stylesheet' href='<?php echo get_template_directory_uri() . '/assets/index.css' ?>' />
+	<link rel='stylesheet' href='<?php echo get_template_directory_uri() . '/assets/css/styles.css' ?>' />
 	
 	<?php wp_head(); ?>
 </head>
