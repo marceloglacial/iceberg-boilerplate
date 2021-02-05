@@ -28,8 +28,8 @@
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/index.css' ?>" as="style" />
-    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/index.js' ?>" as="script" />
+	<link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/css/styles.css' ?>" as="style" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/js/index.js' ?>" as="script" />
 
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() ?>/favicon.png" />
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/tile.png" />
@@ -46,7 +46,7 @@
     <meta property="og:site_name" content="<?php bloginfo( 'title' ); ?>" />
 	<meta property="og:locale" content="<?php bloginfo( 'language' ); ?>" />
 
-	<link rel='stylesheet' href='<?php echo get_template_directory_uri() . '/assets/index.css' ?>' />
+	<link rel='stylesheet' href='<?php echo get_template_directory_uri() . '/assets/css/styles.css' ?>' />
 	
 	<?php wp_head(); ?>
 </head>
